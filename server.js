@@ -3,9 +3,10 @@ const connection = require("./config/db")
 const userRouter = require("./Routes/userRoutes")
 const noteRouter = require("./Routes/noteRouter")
 const dotenv=require("dotenv").config()
-
+const cors=require("cors")
 
 const app=express()
+app.use(cors())
 const PORT=process.env.PORT||8080
 app.use(express.json())
 app.use("/user",userRouter)
