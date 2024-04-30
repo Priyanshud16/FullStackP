@@ -6,9 +6,10 @@ const dotenv=require("dotenv").config()
 const cors=require("cors")
 
 const app=express()
-app.use(cors())
+
 const PORT=process.env.PORT||8080
 app.use(express.json())
+app.use(cors())
 app.use("/user",userRouter)
 app.use('/note',noteRouter)
 app.get('/',(req,res)=>{
